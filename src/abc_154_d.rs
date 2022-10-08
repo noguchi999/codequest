@@ -30,6 +30,7 @@ pub fn exec() {
         p_ex_cum.push(p_ex_cum[i-1] + p_ex[i]);
     }
 
+    let mut ans:f32 = -1000000000000000000000.0;
     let mut ans_tmp = 0.0;
     for i in 0..(N-K+1) {
         if i == 0 {
@@ -37,7 +38,9 @@ pub fn exec() {
         } else {
             ans_tmp = p_ex_cum[i+K-1] - p_ex_cum[i-1];
         }
+        let v = vec![ans, ans_tmp];
+        ans = v.iter().fold(0.0/0.0, |m, v| v.max(m));
     }
-    println!("{}", ans_tmp);
+    println!("{}", ans);
 
 }
