@@ -5,7 +5,7 @@ pub fn exec() {
 
     let mut word_2 = String::new();
     std::io::stdin().read_line(&mut word_2).ok();
-    let p: Vec<f32 > = word_2.trim().split(" ").map(|x| x.parse::<f32 >().unwrap()).collect();
+    let p: Vec<f32> = word_2.trim().split(" ").map(|x| x.parse::<f32>().unwrap()).collect();
 
     // p面ダイスの期待値は(p+1)/2
     // X番目～X+K番目の区間和の計算方法
