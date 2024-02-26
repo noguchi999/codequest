@@ -4,7 +4,7 @@
 // mod abc_167_c;
 // mod caesar_enc;
 // mod prime100;
-mod maze;
+// mod maze;
 
 fn main() {
     // abc_199_a::exec();
@@ -13,5 +13,5 @@ fn main() {
     // abc_167_c::exec();
     // caesar_enc::main();
     // prime100::main();
-    maze::main();
+    // maze::main();
 }
