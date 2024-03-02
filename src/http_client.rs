@@ -1,4 +1,5 @@
 use hyper::Client;
+// https://qiita.com/ishishow/items/abacc371e62d2d2368b2
 
 #[tokio::main]
 pub async fn main() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
