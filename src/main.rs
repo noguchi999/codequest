@@ -5,7 +5,8 @@
 // mod caesar_enc;
 // mod prime100;
 // mod maze;
-mod bingo;
+// mod bingo;
+mod http_client;
 
 fn main() {
     // abc_199_a::exec();
@@ -15,5 +16,6 @@ fn main() {
     // caesar_enc::main();
     // prime100::main();
     // maze::main();
-    bingo::main();
+    // bingo::main();
+    http_client::main();
 }
