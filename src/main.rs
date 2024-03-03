@@ -17,5 +17,5 @@ fn main() {
     // prime100::main();
     // maze::main();
     // bingo::main();
-    http_client::main();
+    _ = http_client::main();
 }
