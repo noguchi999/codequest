@@ -7,7 +7,8 @@
 // mod maze;
 // mod bingo;
 // mod http_client_get;
-mod http_client_post;
+// mod http_client_post;
+mod http_client_get_async;
 
 fn main() {
     // abc_199_a::exec();
@@ -19,5 +20,6 @@ fn main() {
     // maze::main();
     // bingo::main();
     // _ = http_client_get::main();
-    _ = http_client_post::main();
+    // _ = http_client_post::main();
+    _ = http_client_get_async::main();
 }
