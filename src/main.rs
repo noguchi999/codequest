@@ -8,7 +8,8 @@
 // mod bingo;
 // mod http_client_get;
 // mod http_client_post;
-mod http_client_get_async;
+// mod http_client_get_async;
+mod http_client_tls_get;
 
 fn main() {
     // abc_199_a::exec();
@@ -21,5 +22,6 @@ fn main() {
     // bingo::main();
     // _ = http_client_get::main();
     // _ = http_client_post::main();
-    _ = http_client_get_async::main();
+    // _ = http_client_get_async::main();
+    _ = http_client_tls_get::main();
 }
