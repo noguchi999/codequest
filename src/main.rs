@@ -11,6 +11,7 @@
 // mod http_client_get_async;
 // mod http_client_tls_get;
 // mod bmi;
+mod counter;
 
 fn main() {
     // abc_199_a::exec();
@@ -26,4 +27,5 @@ fn main() {
     // _ = http_client_get_async::main();
     // _ = http_client_tls_get::main();
     // bmi::main();
+    counter::main();
 }
