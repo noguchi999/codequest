@@ -12,7 +12,8 @@
 // mod http_client_tls_get;
 // mod bmi;
 // mod counter;
-mod tukimei;
+// mod tukimei;
+mod hashmap_check;
 
 fn main() {
     // abc_199_a::exec();
@@ -29,5 +30,6 @@ fn main() {
     // _ = http_client_tls_get::main();
     // bmi::main();
     // counter::main();
-    tukimei::main();
+    // tukimei::main();
+    hashmap_check::main();
 }
