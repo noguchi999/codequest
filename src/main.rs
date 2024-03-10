@@ -13,7 +13,8 @@
 // mod bmi;
 // mod counter;
 // mod tukimei;
-mod hashmap_check;
+// mod hashmap_check;
+mod hashmap_matcher;
 
 fn main() {
     // abc_199_a::exec();
@@ -31,5 +32,6 @@ fn main() {
     // bmi::main();
     // counter::main();
     // tukimei::main();
-    hashmap_check::main();
+    // hashmap_check::main();
+    hashmap_matcher::main()
 }
