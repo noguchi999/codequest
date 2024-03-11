@@ -14,7 +14,8 @@
 // mod counter;
 // mod tukimei;
 // mod hashmap_check;
-mod hashmap_matcher;
+// mod hashmap_matcher;
+mod compairtext;
 
 fn main() {
     // abc_199_a::exec();
@@ -33,5 +34,6 @@ fn main() {
     // counter::main();
     // tukimei::main();
     // hashmap_check::main();
-    hashmap_matcher::main()
+    // hashmap_matcher::main()
+    compairtext::main();
 }
