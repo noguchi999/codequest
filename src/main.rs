@@ -16,6 +16,7 @@
 // mod hashmap_check;
 // mod hashmap_matcher;
 // mod compairtext;
+mod jisho;
 
 fn main() {
     // abc_199_a::exec();
@@ -36,4 +37,5 @@ fn main() {
     // hashmap_check::main();
     // hashmap_matcher::main()
     // compairtext::main();
+    jisho::main();
 }
