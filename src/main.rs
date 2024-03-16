@@ -16,7 +16,8 @@
 // mod hashmap_check;
 // mod hashmap_matcher;
 // mod compairtext;
-mod jisho;
+// mod jisho;
+mod fizz_buzz_file;
 
 fn main() {
     // abc_199_a::exec();
@@ -37,5 +38,6 @@ fn main() {
     // hashmap_check::main();
     // hashmap_matcher::main()
     // compairtext::main();
-    jisho::main();
+    // jisho::main();
+    fizz_buzz_file::main();
 }
