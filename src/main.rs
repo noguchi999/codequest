@@ -18,7 +18,8 @@
 // mod compairtext;
 // mod jisho;
 // mod fizz_buzz_file;
-mod fizz_buzz_file_2;
+// mod fizz_buzz_file_2;
+mod rec_fib;
 
 fn main() {
     // abc_199_a::exec();
@@ -41,5 +42,6 @@ fn main() {
     // compairtext::main();
     // jisho::main();
     // fizz_buzz_file::main();
-    fizz_buzz_file_2::main();
+    // fizz_buzz_file_2::main();
+    rec_fib::main();
 }
