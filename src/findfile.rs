@@ -13,5 +13,20 @@ pub fn main() {
     findfile(&target, keyword);
 }
 
-fn findfile(target: path::PathBuf, keyword: &str) {
+fn findfile(target: &path::PathBuf, keyword: &str) {
+    let files = target.read_dir().expect("read_dir call failed");
+    for dir_entry in files {
+        let path = dir_entry.unwrap().path();
+        if path.is_dir() {
+            findfile(&path, keyword);
+            continue;
+        }
+
+        let fname = path.file_name().unwrap().to_string_lossy();
+        if None == fname.find(keyword) {
+            continue;
+        }
+
+        println!("{}", path.to_string_lossy());
+    }
 }
