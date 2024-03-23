@@ -20,7 +20,8 @@
 // mod fizz_buzz_file;
 // mod fizz_buzz_file_2;
 // mod rec_fib;
-mod findfile;
+// mod findfile;
+mod cur_file;
 
 fn main() {
     // abc_199_a::exec();
@@ -45,5 +46,6 @@ fn main() {
     // fizz_buzz_file::main();
     // fizz_buzz_file_2::main();
     // rec_fib::main();
-    findfile::main();
+    // findfile::main();
+    cur_file::main();
 }
