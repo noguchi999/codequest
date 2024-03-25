@@ -13,5 +13,19 @@ pub fn main() {
 }
 
 fn tree(target: &path::PathBuf, level: isize) {
+    let files = target.read_dir().expect("not found.");
+    for ent in files {
+        let path = ent.unwrap().path();
+        for _ in 1..=level {
+            print!("|  ");
+        }
 
+        let fname = path.file_name().unwrap().unwrap().to_string_lossy();
+        if path.is_dir() {
+            println!("|-- <{}>", fname);
+            tree(&path, level + 1);
+            continue;
+        }
+        println!("|-- {}", fname);
+    }
 }
