@@ -21,7 +21,8 @@
 // mod fizz_buzz_file_2;
 // mod rec_fib;
 // mod findfile;
-mod cur_file;
+// mod cur_file;
+mod tuple_goods;
 
 fn main() {
     // abc_199_a::exec();
@@ -47,5 +48,6 @@ fn main() {
     // fizz_buzz_file_2::main();
     // rec_fib::main();
     // findfile::main();
-    cur_file::main();
+    // cur_file::main();
+    tuple_goods::main();
 }
