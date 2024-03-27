@@ -22,7 +22,8 @@
 // mod rec_fib;
 // mod findfile;
 // mod cur_file;
-mod tuple_goods;
+// mod tuple_goods;
+mod tuple_goods_struct;
 
 fn main() {
     // abc_199_a::exec();
@@ -49,5 +50,6 @@ fn main() {
     // rec_fib::main();
     // findfile::main();
     // cur_file::main();
-    tuple_goods::main();
+    // tuple_goods::main();
+    tuple_goods_struct::main();
 }
