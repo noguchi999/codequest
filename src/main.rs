@@ -25,7 +25,8 @@
 // mod tuple_goods;
 // mod tuple_goods_struct;
 // mod array_init;
-mod array_init_2;
+// mod array_init_2;
+mod array_get;
 
 fn main() {
     // abc_199_a::exec();
@@ -55,5 +56,6 @@ fn main() {
     // tuple_goods::main();
     // tuple_goods_struct::main();
     // array_init::main();
-    array_init_2::main();
+    // array_init_2::main();
+    array_get::main();
 }
