@@ -28,7 +28,8 @@
 // mod array_init_2;
 // mod array_get;
 // mod slice_str;
-mod slice_show;
+// mod slice_show;
+mod struct_wh;
 
 fn main() {
     // abc_199_a::exec();
@@ -61,5 +62,6 @@ fn main() {
     // array_init_2::main();
     // array_get::main();
     // slice_str::main();
-    slice_show::main();
+    // slice_show::main();
+    struct_wh::main();
 }
