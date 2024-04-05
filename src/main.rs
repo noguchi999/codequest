@@ -30,7 +30,8 @@
 // mod slice_str;
 // mod slice_show;
 // mod struct_wh;
-mod bmi_struct;
+// mod bmi_struct;
+mod str_hex;
 
 fn main() {
     // abc_199_a::exec();
@@ -65,5 +66,6 @@ fn main() {
     // slice_str::main();
     // slice_show::main();
     // struct_wh::main();
-    bmi_struct::main();
+    // bmi_struct::main();
+    str_hex::main();
 }
