@@ -31,7 +31,8 @@
 // mod slice_show;
 // mod struct_wh;
 // mod bmi_struct;
-mod str_hex;
+// mod str_hex;
+mod openai;
 
 fn main() {
     // abc_199_a::exec();
@@ -67,5 +68,6 @@ fn main() {
     // slice_show::main();
     // struct_wh::main();
     // bmi_struct::main();
-    str_hex::main();
+    // str_hex::main();
+    openai::mythread::main();
 }
