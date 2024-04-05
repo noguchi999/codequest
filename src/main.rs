@@ -69,5 +69,6 @@ fn main() {
     // struct_wh::main();
     // bmi_struct::main();
     // str_hex::main();
-    openai::mythread::main();
+    // openai::mythread::main();
+    openai::calc_single::main();
 }
