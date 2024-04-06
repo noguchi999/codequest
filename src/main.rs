@@ -71,5 +71,6 @@ fn main() {
     // str_hex::main();
     // openai::mythread::main();
     // openai::calc_single::main();
-    openai::calc_multi::main();
+    // openai::calc_multi::main();
+    _ = openai::send_request::main();
 }
