@@ -32,7 +32,8 @@
 // mod struct_wh;
 // mod bmi_struct;
 // mod str_hex;
-mod openai;
+// mod openai;
+mod rand_xorshift;
 
 fn main() {
     // abc_199_a::exec();
@@ -72,5 +73,6 @@ fn main() {
     // openai::mythread::main();
     // openai::calc_single::main();
     // openai::calc_multi::main();
-    _ = openai::send_request::main();
+    // _ = openai::send_request::main();
+    rand_xorshift::main();
 }
