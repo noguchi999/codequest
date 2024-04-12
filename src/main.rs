@@ -35,7 +35,8 @@
 // mod openai;
 // mod rand_xorshift;
 // mod bmi_method;
-mod struct_new;
+// mod struct_new;
+mod bmi_checker;
 
 fn main() {
     // abc_199_a::exec();
@@ -78,5 +79,6 @@ fn main() {
     // _ = openai::send_request::main();
     // rand_xorshift::main();
     // bmi_method::main();
-    struct_new::main();
+    // struct_new::main();
+    bmi_checker::main();
 }
