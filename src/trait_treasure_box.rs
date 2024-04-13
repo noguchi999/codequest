@@ -31,3 +31,22 @@ impl TreasureBox for TrapBox {
         println!("罠だった! {} ダメージ", self.damage);
     }
 }
+
+fn open_box(tbox: &impl TreasureBox, key_no: i32) {
+    if tbox.open(key_no) {
+        tbox.check();
+    } else {
+        println!("鍵が合わない...");
+    }
+}
+
+pub fn main() {
+    let box_1 = JewelryBox { price: 100, key_no: 1 };
+    let box_2 = TrapBox { damage: 50 };
+    let box_3 = JewelryBox { price: 200, key_no: 2 };
+
+    let my_key = 2;
+    open_box(&box_1, my_key);
+    open_box(&box_2, my_key);
+    open_box(&box_3, my_key);
+}
