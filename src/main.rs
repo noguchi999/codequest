@@ -38,7 +38,8 @@
 // mod struct_new;
 // mod bmi_checker;
 // mod trait_treasure_box;
-mod trait_treasure_box_def;
+// mod trait_treasure_box_def;
+mod add_i32;
 
 fn main() {
     // abc_199_a::exec();
@@ -84,5 +85,6 @@ fn main() {
     // struct_new::main();
     // bmi_checker::main();
     // trait_treasure_box::main();
-    trait_treasure_box_def::main();
+    // trait_treasure_box_def::main();
+    add_i32::main();
 }
