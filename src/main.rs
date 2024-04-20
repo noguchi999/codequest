@@ -41,7 +41,8 @@
 // mod trait_treasure_box_def;
 // mod add_i32;
 // mod add_generics;
-mod struct_generics;
+// mod struct_generics;
+mod iter_prime;
 
 fn main() {
     // abc_199_a::exec();
@@ -90,5 +91,6 @@ fn main() {
     // trait_treasure_box_def::main();
     // add_i32::main();
     // add_generics::main();
-    struct_generics::main();
+    // struct_generics::main();
+    iter_prime::main();
 }
