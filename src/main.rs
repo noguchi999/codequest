@@ -42,7 +42,8 @@
 // mod add_i32;
 // mod add_generics;
 // mod struct_generics;
-mod iter_prime;
+// mod iter_prime;
+mod counter_fix;
 
 fn main() {
     // abc_199_a::exec();
@@ -92,5 +93,6 @@ fn main() {
     // add_i32::main();
     // add_generics::main();
     // struct_generics::main();
-    iter_prime::main();
+    // iter_prime::main();
+    counter_fix::main();
 }
