@@ -44,7 +44,8 @@
 // mod struct_generics;
 // mod iter_prime;
 // mod counter_fix;
-mod coin;
+// mod coin;
+mod match_num;
 
 fn main() {
     // abc_199_a::exec();
@@ -96,5 +97,6 @@ fn main() {
     // struct_generics::main();
     // iter_prime::main();
     // counter_fix::main();
-    coin::main();
+    // coin::main();]
+    match_num::main();
 }
