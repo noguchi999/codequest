@@ -45,7 +45,8 @@
 // mod iter_prime;
 // mod counter_fix;
 // mod coin;
-mod match_num;
+// mod match_num;
+mod match_fizzbuzz;
 
 fn main() {
     // abc_199_a::exec();
@@ -98,5 +99,6 @@ fn main() {
     // iter_prime::main();
     // counter_fix::main();
     // coin::main();]
-    match_num::main();
+    // match_num::main();
+    match_fizzbuzz::main();
 }
