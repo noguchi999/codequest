@@ -46,7 +46,8 @@
 // mod counter_fix;
 // mod coin;
 // mod match_num;
-mod match_fizzbuzz;
+// mod match_fizzbuzz;
+mod match_fizzbuzz_if;
 
 fn main() {
     // abc_199_a::exec();
@@ -100,5 +101,6 @@ fn main() {
     // counter_fix::main();
     // coin::main();]
     // match_num::main();
-    match_fizzbuzz::main();
+    // match_fizzbuzz::main();
+    match_fizzbuzz_if::main();
 }
