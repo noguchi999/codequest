@@ -47,7 +47,8 @@
 // mod coin;
 // mod match_num;
 // mod match_fizzbuzz;
-mod match_fizzbuzz_if;
+// mod match_fizzbuzz_if;
+mod mod_random;
 
 fn main() {
     // abc_199_a::exec();
@@ -102,5 +103,6 @@ fn main() {
     // coin::main();]
     // match_num::main();
     // match_fizzbuzz::main();
-    match_fizzbuzz_if::main();
+    // match_fizzbuzz_if::main();
+    mod_random::main();
 }
