@@ -48,7 +48,8 @@
 // mod match_num;
 // mod match_fizzbuzz;
 // mod match_fizzbuzz_if;
-mod mod_random;
+// mod mod_random;
+mod mod_rel;
 
 fn main() {
     // abc_199_a::exec();
@@ -104,5 +105,6 @@ fn main() {
     // match_num::main();
     // match_fizzbuzz::main();
     // match_fizzbuzz_if::main();
-    mod_random::main();
+    // mod_random::main();
+    mod_rel::main();
 }
