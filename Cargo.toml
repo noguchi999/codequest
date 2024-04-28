@@ -12,3 +12,4 @@ hyper = { version = "0.14", features = ["full"] }
 tokio = { version = "1", features = ["full"] }
 futures = "0.3"
 hyper-tls = "0.5.0"
+image = "0.23.14"
