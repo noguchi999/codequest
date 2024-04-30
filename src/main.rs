@@ -50,7 +50,8 @@
 // mod match_fizzbuzz_if;
 // mod mod_random;
 // mod mod_rel;
-mod image_ichimatsu;
+// mod image_ichimatsu;
+mod image_thumb;
 
 fn main() {
     // abc_199_a::exec();
@@ -108,5 +109,6 @@ fn main() {
     // match_fizzbuzz_if::main();
     // mod_random::main();
     // mod_rel::main();
-    image_ichimatsu::main();
+    // image_ichimatsu::main();
+    image_thumb::main();
 }
