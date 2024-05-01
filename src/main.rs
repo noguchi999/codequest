@@ -51,7 +51,8 @@
 // mod mod_random;
 // mod mod_rel;
 // mod image_ichimatsu;
-mod image_thumb;
+// mod image_thumb;
+mod mpsctest;
 
 fn main() {
     // abc_199_a::exec();
@@ -110,5 +111,6 @@ fn main() {
     // mod_random::main();
     // mod_rel::main();
     // image_ichimatsu::main();
-    image_thumb::main();
+    // image_thumb::main();
+    mpsctest::main();
 }
