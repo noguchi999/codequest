@@ -53,7 +53,8 @@
 // mod image_ichimatsu;
 // mod image_thumb;
 // mod mpsctest;
-mod calc_single;
+// mod calc_single;
+mod calc_multi;
 
 fn main() {
     // abc_199_a::exec();
@@ -114,5 +115,6 @@ fn main() {
     // image_ichimatsu::main();
     // image_thumb::main();
     // mpsctest::main();
-    calc_single::main();
+    // calc_single::main();
+    calc_multi::main();
 }
