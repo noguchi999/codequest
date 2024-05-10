@@ -21,9 +21,20 @@ pub fn main() {
             clients.push(client.try_clone().unwrap());
             start_thread(client, tx.clone());
         }
+
+        if let Ok(msg) = rx.try_recv() {
+            println!("全員に送信: {}", msg.trim());
+            clients = send_all(clients, &msg)
+        }
     }
 }
 
 fn start_thread(client: TcpStream, tx: mpsc::Sender<String>) {
     let mut reader = BufReader::new(client);
+}
+
+fn send_all(clinets: Vec<TcpStream>, s: &str) -> Vec<TcpStream> {
+    let mut collector = vec![];
+
+    collector
 }
