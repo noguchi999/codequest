@@ -1,6 +1,7 @@
 use std::fs::read_dir;
 use std::net::{TcpListener, TcpStream};
 use std::io::{BufReader, BufRead, Write};
+use std::os::windows::ffi::OsStringExt;
 use std::thread;
 use std::sync::mpsc;
 use std::time::Duration;
@@ -41,8 +42,16 @@ fn start_thread(client: TcpStream, tx: mpsc::Sender<String>) {
     });
 }
 
-fn send_all(clinets: Vec<TcpStream>, s: &str) -> Vec<TcpStream> {
+fn send_all(clients: Vec<TcpStream>, s: &str) -> Vec<TcpStream> {
     let mut collector = vec![];
+    for mut socket in clients.into_iter() {
+        let bytes = String::from(s).into_bytes();
+        if let Err(e) = socket.write_all(&bytes) {
+            println!("送信エラー: {}", e);
+            continue;
+        }
+        collector.push(socket);
+    }
 
     collector
 }
