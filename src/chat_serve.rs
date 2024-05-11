@@ -1,3 +1,4 @@
+use std::fs::read_dir;
 use std::net::{TcpListener, TcpStream};
 use std::io::{BufReader, BufRead, Write};
 use std::thread;
@@ -31,6 +32,13 @@ pub fn main() {
 
 fn start_thread(client: TcpStream, tx: mpsc::Sender<String>) {
     let mut reader = BufReader::new(client);
+    thread::spawn(move || loop {
+        let mut msg = String::new();
+        if let Ok(n) = reader.read_line(&mut msg) {
+            if n > 0 {tx.send(msg).unwrap();}
+        }
+        thread::sleep(Duration::from_millis(100));
+    });
 }
 
 fn send_all(clinets: Vec<TcpStream>, s: &str) -> Vec<TcpStream> {
