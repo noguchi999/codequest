@@ -30,3 +30,10 @@ fn start_thread(socket: TcpStream) {
         }
     });
 }
+
+fn input(msg: &str) -> String {
+    if msg != "" { print!("{}", msg);};
+    let mut buf = String::new();
+    stdin().read_line(&mut buf).unwrap();
+    String::from(buf.trim())
+}
