@@ -14,3 +14,19 @@ macro_rules! easy_for {
         }
     }};
 }
+
+pub fn main() {
+    let mut total = 0;
+    easy_for! {
+        for i = 1 to 10 {
+            total += i;
+        }
+    }
+    println!("Total: {}", total);
+
+    easy_for! {
+        for i = 1 to 10 step 3 {
+            println!("{}", i);
+        }
+    }
+}
