@@ -9,3 +9,7 @@ macro_rules! bmi_select {
         result
     }};
 }
+
+pub fn main() {
+    let h: f32 = 158.0;
+}
