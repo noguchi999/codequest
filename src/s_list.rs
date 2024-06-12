@@ -16,4 +16,27 @@ impl List {
         let new_node = Node{data: v, link: self.head.take()};
         self.head = Some(Box::new(new_node));
     }
+
+    pub fn push(&mut self, v: isize) {
+        let new_node = Node{data: v, link: None};
+        match self.head {
+            None => self.head = Some(Box::new(new_node)),
+            Some(ref mut head) => {
+                let mut p = head;
+                loop {
+                    match p.link {
+                        None => {
+                            p.link = Some(Box::new(new_node));
+                            break;
+                        },
+                        Some(ref mut next) => p = next
+                    }
+                }
+            }
+        }
+    }
+
+    pub fn get(&self, index: isize) -> Option<isize> {
+
+    }
 }
