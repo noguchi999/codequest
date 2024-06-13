@@ -37,6 +37,11 @@ impl List {
     }
 
     pub fn get(&self, index: isize) -> Option<isize> {
-
+        match self.head {
+            None => return None,
+            Some(ref top) => {
+                let mut p = top;
+            }
+        }
     }
 }
