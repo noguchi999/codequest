@@ -41,6 +41,17 @@ impl List {
             None => return None,
             Some(ref top) => {
                 let mut p = top;
+                let mut i = 0;
+                loop {
+                    if i == index {
+                        return Some(p.data);
+                    }
+                    match p.link {
+                        None => return None,
+                        Some(ref link) => p = link,
+                    }
+                    i += 1;
+                }
             }
         }
     }
