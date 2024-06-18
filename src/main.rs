@@ -58,7 +58,8 @@
 // mod chat_serve;
 // mod chat_client;
 // mod macro_echo_num;
-mod rc_test;
+// mod rc_test;
+mod rc_mod_fix;
 
 fn main() {
     // abc_199_a::exec();
@@ -124,5 +125,6 @@ fn main() {
     // chat_serve::main();
     // chat_client::main();
     // macro_echo_num::main();
-    rc_test::main();
+    // rc_test::main();
+    rc_mod_fix::main();
 }
