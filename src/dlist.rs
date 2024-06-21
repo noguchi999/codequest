@@ -6,3 +6,8 @@ pub struct Node {
     next: Option<Rc<RefCell<Node>>>,
     prev: Option<Weak<RefCell<Node>>>
 }
+
+pub struct List {
+    head: Option<Rc<RefCell<Node>>>,
+    tail: Option<Weak<RefCell<Node>>>
+}
