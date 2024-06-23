@@ -11,3 +11,9 @@ pub struct List {
     head: Option<Rc<RefCell<Node>>>,
     tail: Option<Weak<RefCell<Node>>>
 }
+
+impl List {
+    pub fn new() -> List {
+        Self { head: None, tail: None }
+    }
+}
