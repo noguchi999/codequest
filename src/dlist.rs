@@ -16,4 +16,19 @@ impl List {
     pub fn new() -> List {
         Self { head: None, tail: None }
     }
+
+    pub fn push(&mut self, v:isize) {
+        let n = List::new_node(v);
+        match self.foot.take() {
+            None => {
+                self.foot = Some(Rc::downgrade(&n));
+                self.head = Some(n);
+            },
+            Some(old_foot) => {
+                self.foot = Some(Rc::clone(&n));
+                n.borrow_mut().prev = Some(Rc::downgrade(&old_foot));
+                old_foot.borrow_mut().next = Some(n);
+            }
+        }
+    }
 }
