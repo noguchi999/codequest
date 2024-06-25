@@ -31,4 +31,8 @@ impl List {
             }
         }
     }
+
+    pub fn unshift(&mut self, v:isize) {
+        let n = List::new_node(v);
+    }
 }
