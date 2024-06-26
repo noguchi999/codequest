@@ -34,5 +34,16 @@ impl List {
 
     pub fn unshift(&mut self, v:isize) {
         let n = List::new_node(v);
+        match self.head_take() {
+            None => {
+                self.foot = Some(Rc::clone(&n));
+                self.head = Some(n);
+            },
+            Some(old_head) => {
+                old_head.borrow_mut().prev = Some(Rc::downgrade(&old_head));
+                n.borrow_mut().next = Some(old_head);
+                self.head = Some(n);
+            }
+        }
     }
 }
