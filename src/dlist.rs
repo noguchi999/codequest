@@ -47,3 +47,7 @@ impl List {
         }
     }
 }
+
+pub struct List {
+    pub cur: Option<Rc<RefCell<Node>>>
+}
