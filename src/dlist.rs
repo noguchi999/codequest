@@ -51,3 +51,7 @@ impl List {
 pub struct List {
     pub cur: Option<Rc<RefCell<Node>>>
 }
+
+impl Iterator for ListIter {
+    type Item = isize;
+}
