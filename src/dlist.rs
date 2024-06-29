@@ -54,4 +54,18 @@ pub struct List {
 
 impl Iterator for ListIter {
     type Item = isize;
+    fn next(&mut self) -> Option<isize> {
+        match self.cur.take() {
+            None => None,
+            Some(cur) => {
+                let cn = cur.borrow();
+                let data = cn.data;
+                match &cb.next {
+                    None => self.cur = None,
+                    Some(next) => self.cur = Some(Rc::clone(next))
+                }
+                Some(data)
+            }
+        }
+    }
 }
