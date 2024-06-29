@@ -9,34 +9,41 @@ pub struct Node {
 
 pub struct List {
     head: Option<Rc<RefCell<Node>>>,
-    tail: Option<Weak<RefCell<Node>>>
+    tail: Option<Rc<RefCell<Node>>>
 }
 
 impl List {
     pub fn new() -> List {
         Self { head: None, tail: None }
     }
+    fn new_node(v:isize) -> Rc<RefCell<Node>> {
+        Rc::new(RefCell::new(Node {
+            data: v,
+            next: None,
+            prev: None
+        }))
+    }
 
     pub fn push(&mut self, v:isize) {
         let n = List::new_node(v);
-        match self.foot.take() {
+        match self.tail.take() {
             None => {
-                self.foot = Some(Rc::downgrade(&n));
+                self.tail = Some(Rc::clone(&n));
                 self.head = Some(n);
             },
-            Some(old_foot) => {
-                self.foot = Some(Rc::clone(&n));
-                n.borrow_mut().prev = Some(Rc::downgrade(&old_foot));
-                old_foot.borrow_mut().next = Some(n);
+            Some(old_tail) => {
+                self.tail = Some(Rc::clone(&n));
+                n.borrow_mut().prev = Some(Rc::downgrade(&old_tail));
+                old_tail.borrow_mut().next = Some(n);
             }
         }
     }
 
     pub fn unshift(&mut self, v:isize) {
         let n = List::new_node(v);
-        match self.head_take() {
+        match self.head.take() {
             None => {
-                self.foot = Some(Rc::clone(&n));
+                self.tail = Some(Rc::clone(&n));
                 self.head = Some(n);
             },
             Some(old_head) => {
@@ -46,9 +53,19 @@ impl List {
             }
         }
     }
+
+    pub fn iter(&mut self) -> ListIter {
+        match & self.head {
+            None => ListIter{cur:None},
+            Some(head) => {
+                let head = Rc::clone(&head);
+                ListIter{cur: Some(head)}
+            }
+        }
+    }
 }
 
-pub struct List {
+pub struct ListIter {
     pub cur: Option<Rc<RefCell<Node>>>
 }
 
@@ -58,8 +75,8 @@ impl Iterator for ListIter {
         match self.cur.take() {
             None => None,
             Some(cur) => {
-                let cn = cur.borrow();
-                let data = cn.data;
+                let cb = cur.borrow();
+                let data = cb.data;
                 match &cb.next {
                     None => self.cur = None,
                     Some(next) => self.cur = Some(Rc::clone(next))
@@ -67,5 +84,16 @@ impl Iterator for ListIter {
                 Some(data)
             }
         }
+    }
+}
+
+pub fn main() {
+    let mut list = List::new();
+    list.push(100);
+    list.push(110);
+    list.unshift(10);
+    list.unshift(20);
+    for v in list.iter() {
+        println!("{}", v);
     }
 }
