@@ -9,4 +9,5 @@ peg::parser! (pub grammar tomat() for str {
         {Node::PrintStr(v.to_string())}
         / "print" _ v:calc()
         {Node::Print(Box::new(v))}
+    rule if() -> Node = "if" _ v:if_cond() {v}
 })
