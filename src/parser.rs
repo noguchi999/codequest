@@ -10,4 +10,5 @@ peg::parser! (pub grammar tomat() for str {
         / "print" _ v:calc()
         {Node::Print(Box::new(v))}
     rule if() -> Node = "if" _ v:if_cond() {v}
+    rule if_cond() -> None = if_elif() / if_else() / if_true_only()
 })
