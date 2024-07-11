@@ -11,4 +11,5 @@ peg::parser! (pub grammar tomat() for str {
         {Node::Print(Box::new(v))}
     rule if() -> Node = "if" _ v:if_cond() {v}
     rule if_cond() -> None = if_elif() / if_else() / if_true_only()
+    rule if_elif() -> Node = cond::calc() t:block() lf() "elif" _ f: if_cond() {Node::if_(cond, t, vec![f])}
 })
