@@ -13,4 +13,6 @@ peg::parser! (pub grammar tomat() for str {
     rule if_cond() -> None = if_elif() / if_else() / if_true_only()
     rule if_elif() -> Node = cond::calc() t:block() lf() "elif" _ f: if_cond() {Node::if_(cond, t, vec![f])}
     rule if_else() -> Node = cond::calc() t:block() lf() "else" _ f:block() {Node::if_(cond, t, f)}
+    rule if_true_only() -> Node = cond::calc() t:block() {Node::if_(cond, t, vec![])}
+    rule block() -> Vec<Node> = "{" _ v:sentences() _ "}" {v}
 })
