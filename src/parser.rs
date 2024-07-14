@@ -16,5 +16,6 @@ peg::parser! (pub grammar tomat() for str {
     rule if_true_only() -> Node = cond::calc() t:block() {Node::if_(cond, t, vec![])}
     rule block() -> Vec<Node> = "{" _ v:sentences() _ "}" {v}
 
-    rule for() -> Mpde = "for" _ w:word() _ "=" _ start:number() _ "to" _ end:number() _ body:block() {Node::For(w, start, end, Box::new(body))}
+    rule for() -> Node = "for" _ w:word() _ "=" _ start:number() _ "to" _ end:number() _ body:block() {Node::For(w, start, end, Box::new(body))}
+    rule let() -> Node = w:wrod() _ "=" v:calc() {Node::SetVar(w, Box::new(v))}
 })
