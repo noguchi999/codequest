@@ -19,5 +19,7 @@ peg::parser! (pub grammar tomat() for str {
     rule for() -> Node = "for" _ w:word() _ "=" _ start:number() _ "to" _ end:number() _ body:block() {Node::For(w, start, end, Box::new(body))}
     rule let() -> Node = w:wrod() _ "=" v:calc() {Node::SetVar(w, Box::new(v))}
     rule calc() -> Node = comp()
-    rule comp() -> Node = l:expr() "==" _ r:comp() {Node::calc("=", l, r)}
+    rule comp() -> Node
+        = l:expr() "==" _ r:comp() {Node::calc("=", l, r)}
+        / l:expr() "!=" _ r:comp() {Node::calc("!", l, r)}
 })
