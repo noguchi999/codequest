@@ -22,4 +22,6 @@ peg::parser! (pub grammar tomat() for str {
     rule comp() -> Node
         = l:expr() "==" _ r:comp() {Node::calc("=", l, r)}
         / l:expr() "!=" _ r:comp() {Node::calc("!", l, r)}
+        / l:expr() ">" _ r:comp() {Node::calc(">", l, r)}
+        / l:expr() "<" _ r:comp() {Node::calc("<", l, r)}
 })
