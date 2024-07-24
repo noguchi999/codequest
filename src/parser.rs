@@ -31,4 +31,9 @@ peg::parser! (pub grammar tomat() for str {
         = l:term() "+" _ r:expr() {Node::calc("+", l, r)}
         / l:term() "-" _ r:expr() {Node::calc("-", l, r)}
         / l:term()
+    rule term() -> Node
+        = l:val() "*" _ r:term() {Node::calc("*", l, r)}
+        / l:val() "/" _ r:term() {Node::calc("/", l, r)}
+        / l:val() "%" _ r:term() {Node::calc("%", l, r)}
+        / l:val()
 })
