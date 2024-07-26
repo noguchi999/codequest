@@ -40,4 +40,6 @@ peg::parser! (pub grammar tomat() for str {
         = "(" _ v:calc() _ ")" {v}
         / v:number() _ {Node::Number(v)}
         / w:word() _ {Node::GetVar(w)}
+    rule number() -> i64
+        = v:$(['a'..='z'|'A'..='Z'|'_']+ ['0'..='9']*) {String::from(v)}
 })
