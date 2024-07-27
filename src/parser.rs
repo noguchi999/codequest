@@ -41,5 +41,7 @@ peg::parser! (pub grammar tomat() for str {
         / v:number() _ {Node::Number(v)}
         / w:word() _ {Node::GetVar(w)}
     rule number() -> i64
-        = v:$(['a'..='z'|'A'..='Z'|'_']+ ['0'..='9']*) {String::from(v)}
+        = v:$(['0'..='9']+) {n.parse().unwrap()}
+    rule word() -> String
+    = v:$(['a'..='z'|'A'..='Z'|'_']+ ['0'..='9']*) {String::from(v)}
 })
