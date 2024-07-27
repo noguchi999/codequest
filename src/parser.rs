@@ -43,5 +43,9 @@ peg::parser! (pub grammar tomat() for str {
     rule number() -> i64
         = v:$(['0'..='9']+) {n.parse().unwrap()}
     rule word() -> String
-    = v:$(['a'..='z'|'A'..='Z'|'_']+ ['0'..='9']*) {String::from(v)}
-})
+        = v:$(['a'..='z'|'A'..='Z'|'_']+ ['0'..='9']*) {String::from(v)}
+
+    rule end_of_line() = [';'|'\n']+ _
+    rule if() = _ ['\n']* if_
+    rule _ = [' '|'\t']*
+});
