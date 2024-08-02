@@ -26,5 +26,8 @@ fn run_node(ctx: &mut Context, node: Node) -> i64 {
                 run_node(ctx, *false_n)
             }
         },
+        Node::For(name, start, end, body) => {
+            let mut r = 0;
+        },
     }
 }
