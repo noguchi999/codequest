@@ -29,6 +29,10 @@ fn run_node(ctx: &mut Context, node: Node) -> i64 {
         Node::For(name, start, end, body) => {
             let mut r = 0;
             let nodes = *body;
+            for i in start..=end {
+                ctx.vars.insert(name.clone(), i);
+                r = rune_nodees(ctx, &nodes);
+            }
         },
     }
 }
