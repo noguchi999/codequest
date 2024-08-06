@@ -34,5 +34,6 @@ fn run_node(ctx: &mut Context, node: Node) -> i64 {
                 r = rune_nodees(ctx, &nodes);
             }
         },
+        Node::PrintStr(v) => { println!("{}", v); 0 },
     }
 }
