@@ -35,5 +35,11 @@ fn run_node(ctx: &mut Context, node: Node) -> i64 {
             }
         },
         Node::PrintStr(v) => { println!("{}", v); 0 },
+        Node::Print(node) => {
+            let v = run_node(ctx, *node);
+            println("{}", v);
+            v
+        },
+        _ => 0,
     }
 }
