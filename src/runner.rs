@@ -43,3 +43,7 @@ fn run_node(ctx: &mut Context, node: Node) -> i64 {
         _ => 0,
     }
 }
+
+fn calc_op(op: char, val_l:i64, val_r:i64) -> i64 {
+
+}
