@@ -48,5 +48,8 @@ fn calc_op(op: char, val_l:i64, val_r:i64) -> i64 {
     match op {
         "+" => val_l + val_r,
         "-" => val_l - val_r,
+        "/" => val_l / val_r,
+        "*" => val_l * val_r,
+        "%" => val_l % val_r,
     }
 }
