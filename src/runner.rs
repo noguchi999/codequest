@@ -60,3 +60,11 @@ fn calc_op(op: char, val_l:i64, val_r:i64) -> i64 {
         _ => 0,
     }
 }
+
+fn run_nodes(ctx: &mut Context, nodes: &Vec<Node>) -> i64 {
+    let mut r = 0;
+    nodes.itr().for_each(|node| {
+        r = run_node(ctx, node.clone());
+    });
+    r
+}
