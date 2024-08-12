@@ -51,8 +51,12 @@ fn calc_op(op: char, val_l:i64, val_r:i64) -> i64 {
         "/" => val_l / val_r,
         "*" => val_l * val_r,
         "%" => val_l % val_r,
-        "=" => val_l == val_r,
-        "!" => val_l != val_r,
-        ">" => val_l > val_r,
+        "=" => if val_l == val_r {1} else {0},
+        "!" => if val_l != val_r {1} else {0},
+        ">" => if val_l > val_r {1} else {0},
+        "g" => if val_l >= val_r {1} else {0},
+        "<" => if val_l < val_r {1} else {0},
+        "l" => if val_l <= val_r {1} else {0},
+        _ => 0,
     }
 }
