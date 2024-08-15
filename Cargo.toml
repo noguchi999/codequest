@@ -1,4 +1,4 @@
-workspace = { members = ["mytest"] }
+workspace = { members = ["mytest", "wasm_hello"] }
 [package]
 name = "codequest"
 version = "0.1.0"
