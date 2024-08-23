@@ -1156,6 +1156,14 @@ dependencies = [
 ]
 
 [[package]]
+name = "wasm_tomat"
+version = "0.1.0"
+dependencies = [
+ "peg",
+ "wasm-bindgen",
+]
+
+[[package]]
 name = "weezl"
 version = "0.1.8"
 source = "registry+https://github.com/rust-lang/crates.io-index"
