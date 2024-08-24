@@ -7,7 +7,8 @@ struct Context {
     outputs: String,
 }
 
-fn run_node(ctx: &mut Context, node: Node) -> i64 {
+fn run_node(ctx: &mut Context, node: Node) -> i32 {
+
     match node {
         Node::Number(v) => v,
         Node::Calc(op, l, r) => {
@@ -35,10 +36,13 @@ fn run_node(ctx: &mut Context, node: Node) -> i64 {
                 r = rune_nodees(ctx, &nodes);
             }
         },
-        Node::PrintStr(v) => { println!("{}", v); 0 },
+        Node::PrintStr(v) => {
+            ctx.output += &format!("{}\n", v);
+            0
+        },
         Node::Print(node) => {
             let v = run_node(ctx, *node);
-            println("{}", v);
+            ctx.output += &format!("{}\n", v);
             v
         },
         _ => 0,
