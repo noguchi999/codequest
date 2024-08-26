@@ -74,8 +74,10 @@ fn run_nodes(ctx: &mut Context, nodes: &Vec<Node>) -> i64 {
     r
 }
 
-pub fn run(src: &str) {
+pub fn run(src: &str) -> String{
     let nodes = tomato::parse(src).unwrap();
     let mut ctx = Context { vars: HashMap::new() };
     run_nodes(&mut ctx, &nodes);
+
+    return ctx.output.clone();
 }
