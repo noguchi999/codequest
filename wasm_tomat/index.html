@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="utf-8">
+    <body>
+        <script type="module">
+            import init, {tomato_run} from './pkg/wasm_tomat.js';
+            int().then (() => {
+                window.tomato_run = tomato_run;
+            });
+        </script>
+    </body>
+</html>
