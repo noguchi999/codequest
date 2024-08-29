@@ -8,5 +8,13 @@
                 window.tomato_run = tomato_run;
             });
         </script>
+        <script type="text/javascript">
+            function run() {
+                if (!window.tomato_run) {
+                    aelrt("WASM not loaded yet");
+                    return;
+                }
+            }
+        </script>
     </body>
 </html>
