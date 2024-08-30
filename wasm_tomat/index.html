@@ -20,7 +20,11 @@
                 result.innerHTML = to_html(r);
             }
             function t_html(s) {
-
+                s = s.replace(/&/g, "&amp;");
+                s = s.replace(/</g, "&lt;");
+                s = s.replace(/>/g, "&gt;");
+                s = s.replace(/^n/g, "<br>");
+                return s;
             }
         </script>
     </body>
