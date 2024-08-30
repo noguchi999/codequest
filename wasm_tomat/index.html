@@ -14,6 +14,13 @@
                     aelrt("WASM not loaded yet");
                     return;
                 }
+                const code = document.getElementById("code").value;
+                const r = window.tomato_run(code);
+                const result = document.getElementById("result");
+                result.innerHTML = to_html(r);
+            }
+            function t_html(s) {
+
             }
         </script>
     </body>
