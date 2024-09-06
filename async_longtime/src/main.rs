@@ -4,6 +4,8 @@ use tokio::time;
 async fn main() {
     for i in 1..=3 {
         println!("#{}を開始", i);
+        let s = read_longtime().await;
+        println!("{}", s);
     }
 }
 
