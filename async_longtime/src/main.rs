@@ -6,6 +6,11 @@ async fn main() {
         println!("#{}を開始", i);
         let s = read_longtime().await;
         println!("{}", s);
+        let s = async {
+            time::sleep(time::Duration::from_secs(1)).await;
+            String::from("長い読み込み完了(block)")
+        }.await;
+        println!("{}", s);
     }
 }
 
