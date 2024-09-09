@@ -1,4 +1,4 @@
-workspace = { members = [ "async_longtime", "async_test","mytest", "wasm_hello", "wasm_tomat"] }
+workspace = { members = [ "async_longtime", "async_spawn", "async_test","mytest", "wasm_hello", "wasm_tomat"] }
 [package]
 name = "codequest"
 version = "0.1.0"
