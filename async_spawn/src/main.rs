@@ -12,4 +12,10 @@ async fn main() {
     tokio::spawn(say_later(1, "サンデーがホリデー"));
     time::sleep(time::Duration::from_secs(4)).await;
     println!("------");
+
+    tokio::join! (
+        say_later(3, "毎日がエブリィデイ"),
+        say_later(2, "エブリィデイがサンデー"),
+        say_later(1, "サンデーがホリデー"),
+    );
 }
