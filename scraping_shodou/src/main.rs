@@ -10,5 +10,5 @@ async fn main() {
 }
 
 async fn download_images(title: &str) {
-
+    let shodou_url = "https://uta.pw/shodou";
 }
