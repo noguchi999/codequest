@@ -11,4 +11,9 @@ async fn main() {
 
 async fn download_images(title: &str) {
     let shodou_url = "https://uta.pw/shodou";
+    let url = format! (
+        "{}/index.php?titles&show&title={}",
+        shodou_url,
+        urlencoding::encode(title)
+    );
 }
