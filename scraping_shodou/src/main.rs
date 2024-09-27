@@ -16,4 +16,6 @@ async fn download_images(title: &str) {
         shodou_url,
         urlencoding::encode(title)
     );
+    println!("get: {}", url);
+
 }
