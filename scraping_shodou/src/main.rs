@@ -17,5 +17,5 @@ async fn download_images(title: &str) {
         urlencoding::encode(title)
     );
     println!("get: {}", url);
-
+    let html = reqwest::get(url);
 }
