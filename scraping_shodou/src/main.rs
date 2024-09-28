@@ -16,6 +16,6 @@ async fn download_images(title: &str) {
         shodou_url,
         urlencoding::encode(title)
     );
-    println!("get: {}", url);
-    let html = reqwest::get(url);
+    println!("get: {}", url)
+    let html = reqwest::get(url).await.unwrap().text().await.unwrap();
 }
