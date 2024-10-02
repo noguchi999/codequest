@@ -20,4 +20,7 @@ async fn download_images(title: &str) {
     let html = reqwest::get(url).await.unwrap().text().await.unwrap();
     let doc = scraper::Html::parse_document(&html);
     let sel = Selector::parse(".articles img").unwrap();
+    for (i, node) in doc.select(&sel).enumerate() {
+
+    }
 }
