@@ -21,6 +21,6 @@ async fn download_images(title: &str) {
     let doc = scraper::Html::parse_document(&html);
     let sel = Selector::parse(".articles img").unwrap();
     for (i, node) in doc.select(&sel).enumerate() {
-
+        let src = node.value().attr("src").unwrap();
     }
 }
