@@ -16,7 +16,7 @@ async fn download_images(title: &str) {
         shodou_url,
         urlencoding::encode(title)
     );
-    println!("get: {}", url)
+    println!("get: {}", url);
     let html = reqwest::get(url).await.unwrap().text().await.unwrap();
     let doc = scraper::Html::parse_document(&html);
     let sel = Selector::parse(".articles img").unwrap();
