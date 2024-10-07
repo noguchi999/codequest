@@ -24,5 +24,6 @@ async fn download_images(title: &str) {
         let src = node.value().attr("src").unwrap();
         let img_url = format!("shodou_{}_{}.png", title, i);
         println!("{}", img_url);
+        let bytes = reqwest::get(img_url).await.unwrap().bytes().await.unwrap();
     }
 }
