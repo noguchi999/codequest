@@ -22,8 +22,10 @@ async fn download_images(title: &str) {
     let sel = Selector::parse(".articles img").unwrap();
     for (i, node) in doc.select(&sel).enumerate() {
         let src = node.value().attr("src").unwrap();
-        let img_url = format!("shodou_{}_{}.png", title, i);
+        let img_url = format!("{}/{}", shodou_url, src);
         println!("{}", img_url);
+        let filename = format!("shodou_{}_{}.png", title, i);
         let bytes = reqwest::get(img_url).await.unwrap().bytes().await.unwrap();
+        let mut file = File::create(filename).unwrap();
     }
 }
