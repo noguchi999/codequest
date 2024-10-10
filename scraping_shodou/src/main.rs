@@ -28,5 +28,6 @@ async fn download_images(title: &str) {
         let bytes = reqwest::get(img_url).await.unwrap().bytes().await.unwrap();
         let mut file = File::create(filename).unwrap();
         file.write_all(&bytes).unwrap();
+        time::sleep(time::Duration::from_millis(1000)).await;
     }
 }
