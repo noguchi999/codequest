@@ -8,6 +8,7 @@ const SALT: & str = "yH4dPkrXq5SkKrGmT8bYGZpXu5TxtdnM";
 pub fn encrypt(password: &str, data: &str) -> String {
     let key = get_key(password);
     let iv = get_iv();
+    let cipher = Aes256Cbc::new_from_slices(&key, &iv).unwrap();
 }
 
 fn get_key(password: &str) -> Vec<u8> {
