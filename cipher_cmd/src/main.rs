@@ -9,6 +9,7 @@ pub fn encrypt(password: &str, data: &str) -> String {
     let key = get_key(password);
     let iv = get_iv();
     let cipher = Aes256Cbc::new_from_slices(&key, &iv).unwrap();
+    let result = cipher.encrypt_vec(data.as_bytes());
 }
 
 fn get_key(password: &str) -> Vec<u8> {
