@@ -11,6 +11,9 @@ pub fn encrypt(password: &str, data: &str) -> String {
     let cipher = Aes256Cbc::new_from_slices(&key, &iv).unwrap();
     let result = cipher.encrypt_vec(data.as_bytes());
     let mut ivres: Vec<u8> = vec![];
+    ivres.extend(iv);
+    ivres.extend(result);
+    base64::encode(ivres)
 }
 
 fn get_key(password: &str) -> Vec<u8> {
