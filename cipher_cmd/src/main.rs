@@ -18,6 +18,8 @@ pub fn encrypt(password: &str, data: &str) -> String {
 
 fn get_key(password: &str) -> Vec<u8> {
     let mut res::Vec<u8> = vec![0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+    getrandom::getrandom(&mut res).unwrap();
+    res
 }
 
 fn gen_iv() -> Vec<u8> {
