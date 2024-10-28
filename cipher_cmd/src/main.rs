@@ -26,5 +26,6 @@ fn get_key(password: &str) -> Vec<u8> {
     let pw:String = format!("{}::{}", password, SALT);
     let mut h = Sha256::new();
     h.update(pw.as_bytes());
+    h.finalize().to_vec()
 }
 
