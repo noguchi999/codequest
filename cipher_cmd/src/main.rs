@@ -29,3 +29,6 @@ fn get_key(password: &str) -> Vec<u8> {
     h.finalize().to_vec()
 }
 
+pub fn decrypt(password: &str, data: &str) -> String {
+
+}
