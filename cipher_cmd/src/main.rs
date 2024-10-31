@@ -31,4 +31,5 @@ fn get_key(password: &str) -> Vec<u8> {
 
 pub fn decrypt(password: &str, data: &str) -> String {
     let key = get_key(password);
+    let bytes = base64::decode(data).unwrap();
 }
