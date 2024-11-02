@@ -2,13 +2,13 @@ use aes::Aes256;
 use block_modes::{BlockMode, Cbc, block_padding::Pkcs7};
 use sha2::{Sha256, Digest};
 
-type Aes256Cbc = Cbc<Aes256, Pkcs7>;
+type Aes2Cbc = Cbc<Aes256, Pkcs7>;
 const SALT: & str = "yH4dPkrXq5SkKrGmT8bYGZpXu5TxtdnM";
 
 pub fn encrypt(password: &str, data: &str) -> String {
     let key = get_key(password);
-    let iv = get_iv();
-    let cipher = Aes256Cbc::new_from_slices(&key, &iv).unwrap();
+    let iv = gen_iv();
+    let cipher = Aes2Cbc::new_from_slices(&key, &iv).unwrap();
     let result = cipher.encrypt_vec(data.as_bytes());
     let mut ivres: Vec<u8> = vec![];
     ivres.extend(iv);
@@ -33,4 +33,5 @@ pub fn decrypt(password: &str, data: &str) -> String {
     let key = get_key(password);
     let bytes = base64::decode(data).unwrap();
     let iv = &bytes[..16];
+    let cipher = Aes2Cbc::new_from_slices(&key, iv).unwrap();
 }
