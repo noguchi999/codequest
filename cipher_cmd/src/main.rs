@@ -35,5 +35,5 @@ pub fn decrypt(password: &str, data: &str) -> String {
     let iv = &bytes[..16];
     let cipher = Aes2Cbc::new_from_slices(&key, iv).unwrap();
     let result = cipher.decrypt_vec(&bytes[16..]).unwrap();
-
+    String::from_utf8(result).unwrap()
 }
