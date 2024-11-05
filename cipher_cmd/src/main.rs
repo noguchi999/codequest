@@ -37,3 +37,5 @@ pub fn decrypt(password: &str, data: &str) -> String {
     let result = cipher.decrypt_vec(&bytes[16..]).unwrap();
     String::from_utf8(result).unwrap()
 }
+
+#[cfg(test)]
