@@ -39,3 +39,6 @@ pub fn decrypt(password: &str, data: &str) -> String {
 }
 
 #[cfg(test)]
+mod cipher_tests {
+
+}
