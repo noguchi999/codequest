@@ -43,6 +43,6 @@ mod cipher_tests {
     use super::*;
     #[test]
     fn enc_dec_test() {
-
+        let password = "abcd";
     }
 }
