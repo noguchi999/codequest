@@ -42,4 +42,7 @@ pub fn decrypt(password: &str, data: &str) -> String {
 mod cipher_tests {
     use super::*;
     #[test]
+    fn enc_dec_test() {
+
+    }
 }
