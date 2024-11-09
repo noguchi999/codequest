@@ -44,5 +44,6 @@ mod cipher_tests {
     #[test]
     fn enc_dec_test() {
         let password = "abcd";
+        let data = "穏やかな心は体に良い。";
     }
 }
