@@ -45,5 +45,6 @@ mod cipher_tests {
     fn enc_dec_test() {
         let password = "abcd";
         let data = "穏やかな心は体に良い。";
+        let enc = encrypt(password, data);
     }
 }
