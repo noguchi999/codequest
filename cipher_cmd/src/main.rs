@@ -46,5 +46,7 @@ mod cipher_tests {
         let password = "abcd";
         let data = "穏やかな心は体に良い。";
         let enc = encrypt(password, data);
+        let dec = decrypt(password, &enc);
+        println!("復号化: {}", dec);
     }
 }
