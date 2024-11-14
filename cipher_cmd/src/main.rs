@@ -49,5 +49,6 @@ mod cipher_tests {
         println!("暗号化: {}", enc);
         let dec = decrypt(password, &enc);
         println!("復号化: {}", dec);
+        assert_eq!(data, dec);
     }
 }
